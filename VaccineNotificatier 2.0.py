@@ -21,7 +21,7 @@ def send_mail(appt, email, apppassword):
     
     msg = f"Subject : {subject} \n\n {body}"
     
-    server.sendmail('vidhibansal004@gmail.com', email, msg)
+    server.sendmail(email, email, msg)
     
     print(" Hey! E-Mail has been sent!")
     server.quit()
