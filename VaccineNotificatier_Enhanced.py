@@ -74,6 +74,9 @@ def AppointmentCheck():
                     
                     b.append(str(f"{session['date']} // Age Limit :{session['min_age_limit']} // Capacity : {session['available_capacity']}"))
                     capacity = session['available_capacity']
+                    if capacity > 0:
+                        print("Found Vaccination Dates!")
+                        send_mail(a)
                     res[a] = b
             
             a = ''
