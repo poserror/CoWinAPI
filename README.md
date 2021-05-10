@@ -1,5 +1,5 @@
 
-This python script will check the COWIN availability every 1 Min and it will send you an email, as soon as there is any availability. 
+This python script will check the COWIN app for available vaccine centers for the PinCode that you've provided every 1 min and it will send you an email as soon as there is any availability. 
 
 In order to receive Emails, create your google App Password by following this link: https://support.google.com/accounts/answer/185833?hl=en
 
