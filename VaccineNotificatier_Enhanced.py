@@ -16,7 +16,7 @@ email = input("Enter Email: ")
 passcode = input("Enter Passcode: ")
 
 
-def send_mail_vidhi(appt):
+def send_mail(appt):
     server = smtplib.SMTP('smtp.gmail.com',587)
     server.ehlo()
     server.starttls()
@@ -36,29 +36,6 @@ def send_mail_vidhi(appt):
     
     print(" Hey! E-Mail has been sent!")
     server.quit()
-
-
-def send_mail_papa(appt):
-    server = smtplib.SMTP('smtp.gmail.com',587)
-    server.ehlo()
-    server.starttls()
-    server.ehlo()
-    
-    server.login('dhirajragrawal@gmail.com','rakmtihoppepskct')   # Get 2FA and a app-specific password for Gmail
-    
-    subject = 'Vaccine Appointment available near you!'
-    if "No Appointments found" in appt:
-        body = "Hey! I coudn't find any appointments near you!\n"+appt
-    else:
-        body = "Hey! I found some vaccine appointments near you!\n"+appt
-    
-    msg = f"Subject : {subject} \n\n {body}"
-    
-    server.sendmail('vidhibansal004@gmail.com','dhirajragrawal@gmail.com',msg)
-    
-    print(" Hey! E-Mail has been sent!")
-    server.quit() 
-## Specify Pincode before running
 
 def AppointmentCheck():
 
@@ -112,8 +89,7 @@ def AppointmentCheck():
             print(a)
             if capacity > 0:
                 print("Found Vaccination Dates!")
-                send_mail_vidhi(a)
-                send_mail_papa(a)
+                send_mail(a)
             
             # exit()
 
